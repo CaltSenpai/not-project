@@ -11,7 +11,7 @@ export default function Checkin(){
             <h1>Book Details</h1>
             <TextInput label="Book ID" value={value} onChange={(event) => setValue(event.currentTarget.value)} />
             <div className="displayBox">
-
+                
             </div>
             <Button variant="filled">Check In</Button>
         </div>

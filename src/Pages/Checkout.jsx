@@ -11,6 +11,9 @@ export default function Checkout(){
             
             <TextInput label="Patron ID" value={value} onChange={(event) => setValue(event.currentTarget.value)} />
             <TextInput label="Barcode No." value={value} onChange={(event) => setValue(event.currentTarget.value)} />
+            <div className="data">
+                
+            </div>
             <Button variant="filled">Check Out</Button>
         </div>
     );

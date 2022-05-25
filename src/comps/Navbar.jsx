@@ -17,7 +17,7 @@ const useStyles = createStyles((theme, _params, getRef) => {
 });
 
 const data = [
-  { name: "Home", path: "/"},
+  { name: "Home", path: "/home"},
   { name: "Check In", path: "/check-in"},
   { name: "Check Out", path: "/check-out"},
   { name: "Renew", path: "/renew"},

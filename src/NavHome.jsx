@@ -2,17 +2,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Home, Checkin, Checkout, Renew, Acquisitions, Patrons } from "./Pages/index"
 import NavbarSimple from "./comps/Navbar";
-import Login from "./Pages/Login";
 import './App.css';
 
-function App() {
+function NavHome() {
   return (
     <div className="App">
       <BrowserRouter>
         <div className="start"></div>
+        
         <NavbarSimple />
         <Routes>
-          {/* <Route path = "/" element = { <Login />} /> */}
           <Route path = "/home" element = { <Home />} />
           <Route path = "/check-in" element = {<Checkin />} />
           <Route path = "/check-out" element = {<Checkout />} />
@@ -20,7 +19,7 @@ function App() {
           <Route path = "/acquisitions" element = {<Acquisitions />} />
           <Route path = "/patrons" element = {<Patrons />} />
         </Routes>
-      </BrowserRouter> 
+      </BrowserRouter>
      
      
      
@@ -28,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+export default NavHome;
