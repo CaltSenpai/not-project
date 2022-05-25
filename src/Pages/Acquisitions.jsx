@@ -28,6 +28,7 @@ const Acquisitions = () =>{
 
     return (
         <div className="acq">
+            <h1>Add a Book</h1>
             <form onSubmit={handleSubmit}>
             <TextInput label="Name" 
             value={inputs.name} 

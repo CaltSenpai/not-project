@@ -27,6 +27,7 @@ const Patrons = () =>{
 
     return (
             <div className="patrons">
+                <h1>Add a Patron</h1>
             <form onSubmit={handleSubmit}>
             <TextInput label="Name" 
             value={inputs.name} 

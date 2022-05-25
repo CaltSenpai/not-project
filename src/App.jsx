@@ -5,14 +5,16 @@ import NavbarSimple from "./comps/Navbar";
 import Login from "./Pages/Login";
 import './App.css';
 
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <div className="start"></div>
+        {/* <Login /> */}
         <NavbarSimple />
         <Routes>
-          {/* <Route path = "/" element = { <Login />} /> */}
+          
           <Route path = "/home" element = { <Home />} />
           <Route path = "/check-in" element = {<Checkin />} />
           <Route path = "/check-out" element = {<Checkout />} />
