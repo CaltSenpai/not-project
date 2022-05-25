@@ -7,6 +7,7 @@ import {
   Button,
   Title,
 } from '@mantine/core';
+import NavHome from '../NavHome';
 
 
 const useStyles = createStyles((theme) => ({
@@ -55,9 +56,12 @@ export default function Login() {
 
         <TextInput label="User Name" placeholder="Enter Username" size="md" />
         <PasswordInput label="Password" placeholder="Your password" mt="md" size="md" />
-        <Button fullWidth mt="xl" size="md">
+        {/* <Button fullWidth mt="xl" size="md">
           Login
-        </Button>
+        </Button> */}
+        <a href='/'><Button fullWidth mt="xl" size="md">
+          Login
+        </Button></a>
       </Paper>
     </div>
   );
