@@ -7,7 +7,7 @@ export default function Checkout(){
     const [value, setValue] = useState('');
 
     return(
-        <div>
+        <div className ='check-out'>
             
             <TextInput label="Patron ID" value={value} onChange={(event) => setValue(event.currentTarget.value)} />
             <TextInput label="Barcode No." value={value} onChange={(event) => setValue(event.currentTarget.value)} />
