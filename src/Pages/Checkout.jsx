@@ -54,7 +54,7 @@ export default function Checkout(){
             <h1>Borrow a Book</h1>
             <form onSubmit={handleSubmit}>
 
-            <TextInput label="ISBN" 
+            <TextInput  label="ISBN" 
              value={inputs.isbn}
              onChange={handleChange}
              name="isbn" />

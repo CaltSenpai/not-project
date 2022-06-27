@@ -1,6 +1,10 @@
+.cont{
+  padding-top:50px;
+}
 
 
 table {
+    margin:auto;
     border-spacing: 0;
     border: 1px solid #ededed;
     

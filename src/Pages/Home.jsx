@@ -1,4 +1,4 @@
-
+import '../App.css';
 import { Button } from '@mantine/core';
 import Books from "./Book/Books";
 import axios from "axios";
@@ -10,19 +10,19 @@ import Transactions from './Transactions/Transactions';
 export default function Home(){
 
     const [data, setData] = useState([]);
+    const [transaction, setTransaction ] = useState([]);
 
     const allBooks = async ()=> {
           const result = await axios("http://localhost:5000/books");
           setData(result.data.books);
-        console.log(result.data.books);
           document.getElementById("bookcomp").style.visibility = "visible";
+
       
     };
 
     const allTransactions = async ()=> {
         const result = await axios("http://localhost:5000/transactions");
-        // setData(result.data.transactions);
-        console.log(result.data.transactions);
+        setTransaction(result.data.transaction);
         document.getElementById("transComp").style.visibility = "visible";
     }
 
@@ -34,8 +34,9 @@ export default function Home(){
                 
             
             <Button variant="filled" onClick={()=>allTransactions()}>Recent Transactions</Button>
+
             <Books data={data} />
-            <Transactions data = {data} />
+            <Transactions data = {transaction} />
             
             </div>
         </div>

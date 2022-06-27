@@ -11,8 +11,23 @@
 }
 
 
-.check-out Button, .check-in Button{
+ .home Button{
     margin-top:20px;
-}   
+    margin-left: 20px;
+    margin-bottom: 30px;
+}  
+
+
+
+.check-out Button, .check-in Button, .acq Button, .patrons Button{
+    margin: 50px 0px 
+}
+
+.home, .check-in, .check-out, .patrons, .acq{
+    text-align: center;
+    padding: 20px;
+    padding-left: 35px;
+    margin:auto;
+}
 
 

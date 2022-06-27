@@ -29,7 +29,7 @@ export default function Table({ columns, data }) {
       
       return (
 
-            <div >
+            <div className="cont">
             <TextInput
             value={filterInput}
             onChange={handleFilterChange}
