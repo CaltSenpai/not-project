@@ -1,16 +1,20 @@
 import React, { useState } from "react";
-import { TextInput } from '@mantine/core';
+import { TextInput, Button } from '@mantine/core';
+import axios from "axios";
+import Users from "./Users/Users";
 
 
-const Patrons = () =>{
+const Patrons = ()=> {
     
     const [inputs, setInputs] = useState(
         {
+            pid:"",
             name: "",
-            class: "",
+            designation: "",
             phoneno: ""
         }
     );
+
 
     const handleChange =  (e) => {
         setInputs((prevState) =>({
@@ -23,38 +27,67 @@ const Patrons = () =>{
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(inputs);
-    }
+        sendRequest().then( ()=>{
+            setInputs({
+                pid:"",
+                name: "",
+                designation: "",
+                phoneno: ""
+            });
+        });
+    };
+
+    const sendRequest = async () => {
+        await axios
+          .post("http://localhost:5000/users", {
+            pid: String(inputs.pid),
+            name: String(inputs.name),
+            designation: String(inputs.designation),
+            phoneno: String(inputs.phoneno)
+          })
+          .then((res) => res.data);
+      };
 
     return (
             <div className="patrons">
                 <h1>Add a Patron</h1>
             <form onSubmit={handleSubmit}>
+
+            <TextInput label="Patron ID" 
+            value={inputs.pid} 
+            onChange={handleChange}
+            name="pid" />
+            
             <TextInput label="Name" 
             value={inputs.name} 
             onChange={handleChange}
             name="name" />
 
-            <TextInput label="Class" 
-            value={inputs.class} 
+            <TextInput label="Designation" 
+            value={inputs.designation} 
             onChange={handleChange}
-            name="author" />
+            name="designation" />
 
             <TextInput label="Phone Number" 
             value={inputs.phoneno} 
             onChange={handleChange}
-            name="description" />
+            name="phoneno" />
 
-            <button type="submit">Add Patron</button>
+            <Button variant="filled" type="submit">Add Patron</Button>
 
             
             </form>
+
+            <h2>Existing Patrons</h2>
+            <Users />
+            
             </div>
             
 
         
     )
 
-
+    
 };
 
 export default Patrons;

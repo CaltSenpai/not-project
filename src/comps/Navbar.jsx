@@ -20,7 +20,6 @@ const data = [
   { name: "Home", path: "/home"},
   { name: "Check In", path: "/check-in"},
   { name: "Check Out", path: "/check-out"},
-  { name: "Renew", path: "/renew"},
   { name: "Patrons", path: "/patrons"},
   { name: "Acquisitions", path: "/acquisitions"},
 ];

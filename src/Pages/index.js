@@ -1,9 +1,10 @@
 import Home from "./Home";
 import Checkin from "./Checkin";
 import Checkout from "./Checkout";
-import Renew from "./Renew";
 import Login from "./Login";
 import Acquisitions from "./Acquisitions";
 import Patrons from "./Patrons";
+import Books from "./Book/Books";
 
-export { Home, Checkin , Checkout, Renew, Acquisitions, Patrons };
+
+export { Home, Checkin , Checkout, Acquisitions, Patrons, Books };

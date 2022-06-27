@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { TextInput } from '@mantine/core';
-
+import { TextInput, Button } from '@mantine/core';
+import axios from "axios";
 
 const Acquisitions = () =>{
-    
+
     const [inputs, setInputs] = useState(
         {
+            isbn: "",
             name: "",
             author: "",
             description: "",
-            available: ""
+            no_of_copies: ""
         }
     );
 
@@ -24,12 +25,41 @@ const Acquisitions = () =>{
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(inputs);
+        sendRequest().then( ()=>{
+            setInputs(
+                {
+                    isbn: "",
+                    name: "",
+                    author: "",
+                    description: "",
+                    no_of_copies: ""
+                }
+            );
+        })
     }
+
+    const sendRequest = async () => {
+        await axios
+          .post("http://localhost:5000/books", {
+            isbn: String(inputs.isbn),
+            name: String(inputs.name),
+            author: String(inputs.author),
+            description: String(inputs.description),
+            no_of_copies: Number(inputs.no_of_copies)
+          })
+          .then((res) => res.data);
+      };
 
     return (
         <div className="acq">
             <h1>Add a Book</h1>
             <form onSubmit={handleSubmit}>
+
+            <TextInput label="ISBN" 
+            value={inputs.isbn} 
+            onChange={handleChange}
+            name="isbn" />
+
             <TextInput label="Name" 
             value={inputs.name} 
             onChange={handleChange}
@@ -45,7 +75,12 @@ const Acquisitions = () =>{
             onChange={handleChange}
             name="description" />
 
-            <button type="submit">Add Book</button>
+            <TextInput label="No. Of Copies" 
+            value={inputs.no_of_copies} 
+            onChange={handleChange}
+            name="no_of_copies" />
+
+            <Button variant="filled" type="submit">Add Book</Button>
 
             
         </form>
