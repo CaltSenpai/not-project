@@ -48,6 +48,8 @@ export default function NavbarSimple() {
       <Navbar.Section className={classes.footer}>
         <h3>User Name</h3>
         <h4>Institution</h4>
+
+
       </Navbar.Section>
 
     </Navbar>

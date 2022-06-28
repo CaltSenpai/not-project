@@ -10,6 +10,7 @@ import {
 
 
 
+
 const useStyles = createStyles((theme) => ({
   wrapper: {
     minHeight: 900,
@@ -59,9 +60,7 @@ export default function Login() {
         <Button fullWidth mt="xl" size="md">
           Login
         </Button>
-        {/* <a href='/navhome'><Button fullWidth mt="xl" size="md">
-          Login
-        </Button></a> */}
+        
       </Paper>
     </div>
   );
