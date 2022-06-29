@@ -13,17 +13,25 @@ export default function Home(){
     const [transaction, setTransaction ] = useState([]);
 
     const allBooks = async ()=> {
-          const result = await axios("http://localhost:5000/books");
-          setData(result.data.books);
-          document.getElementById("bookcomp").style.visibility = "visible";
+          await axios
+          .get("http://localhost:5000/books")
+          .then((result)=>{
+            setData(result.data.books);
+            document.getElementById("bookcomp").style.visibility = "visible";
 
+          });
+          
       
     };
 
     const allTransactions = async ()=> {
-        const result = await axios("http://localhost:5000/transactions");
-        setTransaction(result.data.transaction);
-        document.getElementById("transComp").style.visibility = "visible";
+        await axios
+        .get("http://localhost:5000/transactions")
+        .then((result)=>{
+            setTransaction(result.data.transaction);
+            document.getElementById("transComp").style.visibility = "visible";
+        })
+        
     }
 
     return(

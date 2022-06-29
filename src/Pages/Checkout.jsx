@@ -40,13 +40,19 @@ export default function Checkout(){
 
     const sendRequest = async () => {
         await axios
-          .post("http://localhost:5000/transactions", {
+          .post("http://localhost:5000/transactions/checkout", {
             isbn: String(inputs.isbn),
             pid: String(inputs.pid),
             date: String(inputs.date),
             type: String(inputs.type)
         })
-          .then((res) => res.data);
+          .then( ()=> axios
+          .post("http://localhost:5000/transactions", {
+            isbn: String(inputs.isbn),
+            pid: String(inputs.pid),
+            date: String(inputs.date),
+            type: String(inputs.type)
+        }));
       };
 
     return(
@@ -64,7 +70,7 @@ export default function Checkout(){
              onChange={handleChange} 
              name="pid"/>
 
-            <TextInput label="Date of Check-Out ( DD-MM-YYYY)" 
+            <TextInput label="Date of Check-Out" 
              value={inputs.date} 
              onChange={handleChange} 
              name="date"/>

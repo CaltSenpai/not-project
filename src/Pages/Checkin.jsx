@@ -41,13 +41,21 @@ export default function Checkin(){
 
     const sendRequest = async () => {
         await axios
-          .post("http://localhost:5000/transactions", {
+          .post("http://localhost:5000/transactions/checkin", {
             isbn: String(inputs.isbn),
             pid: String(inputs.pid),
-            date: String(inputs.date_of_checkin),
+            date: String(inputs.date),
             type: String(inputs.type)
         })
-          .then((res) => res.data);
+          .then ( () =>{
+            axios.post("http://localhost:5000/transactions", {
+            isbn: String(inputs.isbn),
+            pid: String(inputs.pid),
+            date: String(inputs.date),
+            type: String(inputs.type)
+        })
+          })
+            
       };
 
     return(
@@ -65,7 +73,7 @@ export default function Checkin(){
              onChange={handleChange}
              name="pid"/>
 
-            <TextInput label="Date of Check-In ( DD-MM-YYYY) " 
+            <TextInput label="Date of Check-In " 
              value={inputs.date} 
              onChange={handleChange}
              name="date"/>
