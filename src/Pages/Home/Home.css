@@ -1,0 +1,31 @@
+.home{
+    width:70vw;
+    min-height:80vh;
+    text-align: center;
+ 
+}
+.home h1{
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 5px #0a204f;
+}
+
+.home Button{
+    margin: 10px;
+    margin-bottom: 10vh;
+    background-color: #0a204f;
+    width: 250px;
+    height:50px;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+
+.home Button:hover{
+    background-color: #0a204f;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.home input{
+    width:30vw;
+    
+}

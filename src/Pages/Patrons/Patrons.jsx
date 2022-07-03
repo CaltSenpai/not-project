@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TextInput, Button } from '@mantine/core';
 import axios from "axios";
-import Users from "./Users/Users";
+import Users from "../Users/Users";
 
 
 const Patrons = ()=> {

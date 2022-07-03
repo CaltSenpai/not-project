@@ -1,0 +1,21 @@
+.landing{
+    color:white;
+    /* min-height: 90vh ; */
+}
+
+.landing hr{
+    color: white;
+}
+
+.landing h1{
+    font-size: 70px;
+    text-shadow: 5px 2px 5px black;
+}
+
+.landing h2{
+    font-size: 45px;
+}
+
+.landing h3{
+    font-size: 30px;
+}

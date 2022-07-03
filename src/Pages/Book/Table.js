@@ -1,7 +1,7 @@
 import React, { useState }from "react";
 import { useFilters, useTable } from "react-table";
 import { TextInput } from '@mantine/core';
-import './Table.css';
+import '../Table.css';
 
 
 export default function Table({ columns, data }) {

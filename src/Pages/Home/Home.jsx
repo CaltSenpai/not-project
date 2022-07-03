@@ -1,9 +1,9 @@
-import '../App.css';
+import './Home.css'
 import { Button } from '@mantine/core';
-import Books from "./Book/Books";
+import Books from "../Book/Books";
 import axios from "axios";
 import  { useState } from "react";
-import Transactions from './Transactions/Transactions';
+import Transactions from '../Transactions/Transactions';
 
 
 
